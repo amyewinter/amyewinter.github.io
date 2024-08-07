@@ -58,6 +58,5 @@ p, h1, h2, h3, h4, h5, h6 {
 
 <p>I get excited about opportunities to create digital solutions that make information easier to find, navigate and use.</p>
 
-<p>TESTING</p>
   </body>
 </html>

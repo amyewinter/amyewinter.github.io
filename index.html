@@ -9,8 +9,14 @@
       /* 6. Remove built-in form typography styles */ input, button, textarea, select { font: inherit; } 
       /* 7. Avoid text overflows */ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; } 
       /* 8. Create a root stacking context */ #root, #__next { isolation: isolate; }
-      main {max-width: 50vw;}
-      header {color: steelblue; font-size: 1.5rem;}
+      main {max-width: 50vw;
+           margin-left: 5vw;
+           }
+      header {color: steelblue; 
+              font-size: 1.5rem;
+              display: flex;
+              justify-content: space-between;
+             }
       section {margin: 20px auto;}
     </style>
   </head>
@@ -18,6 +24,7 @@
     <main>
     <header>
       <h1>Amy Winter</h1>
+      <div><a href="https://linkedin.com/in/amyewinter">linkedin.com/in/amyewinter</a></div>
     </header>
     <h2>About Me</h2>
     <p>Web design/development and content management expert with 15+ years’ experience making information more available. Through my career, I’ve worked in health care, higher education, libraries/archives/museums and the nonprofit sector to deliver scalable web-based information management/CMS solutions.</p>

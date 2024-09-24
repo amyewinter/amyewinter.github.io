@@ -17,6 +17,28 @@
               display: flex;
               justify-content: space-between;
              }
+
+      /* Popover */
+  .popover {
+    border: 2px dotted red;
+  }
+  /* Popover Header */
+  .popover-title {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    font-size: 28px;
+    text-align:center;
+  }
+  /* Popover Body */
+  .popover-content {
+    background-color: coral;
+    color: #FFFFFF;
+    padding: 25px;
+  }
+  /* Popover Arrow */
+  .arrow {
+    border-right-color: red !important;
+  }
       section {margin: 20px auto;}
     </style>
   </head>
@@ -24,7 +46,9 @@
     <main>
     <header>
       <h1>Amy Winter</h1>
-      <div><a href="https://linkedin.com/in/amyewinter">linkedin.com/in/amyewinter</a></div>
+      <div>
+        <a href="#" data-toggle="popover" title="Contact Me" data-content="<a href="https://linkedin.com/in/amyewinter">linkedin.com/in/amyewinter</a>">Click for Contact Info</a>
+        </div>
     </header>
     <h2>About Me</h2>
     <p>Web design/development and content management expert with 15+ years’ experience making information more available. Through my career, I’ve worked in health care, higher education, libraries/archives/museums and the nonprofit sector to deliver scalable web-based information management/CMS solutions.</p>
@@ -36,5 +60,11 @@
     <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="amyewinter" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/amyewinter?trk=profile-badge"></a></div>
     
           </main>    
+
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();   
+});
+</script>
   </body>
 </html>

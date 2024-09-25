@@ -18,32 +18,50 @@
               display: flex;
               justify-content: space-between;
              }
+
+            section {margin: 20px auto;}
+      
 h1, h2, h3, h4, h5 {text-wrap: balance;}
 p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
       p {margin-bottom: 10px;}
-      
-      /* Popover */
-  .popover {
-    border: 2px dotted red;
+
+      #acts-as-button {
+  background:steelblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
+}
+
+#acts-as-button:hover,
+#acts-as-button:has(#trigger:checked) {
+  background: lightsteelblue;
+}
+
+#trigger {
+  display: none;
+}
+
+#popover {
+  display: none;
+  background-color: lightgrey;
+  width: 300px;
+  padding: 1rem;
+  h1,
+  p {
+    margin: 0;
   }
-  /* Popover Header */
-  .popover-title {
-    background-color: #73AD21; 
-    color: #FFFFFF; 
-    font-size: 28px;
-    text-align:center;
+  h1 {
+    margin-bottom: 0.5rem;
   }
-  /* Popover Body */
-  .popover-content {
-    background-color: coral;
-    color: #FFFFFF;
-    padding: 25px;
-  }
-  /* Popover Arrow */
-  .arrow {
-    border-right-color: red !important;
-  }
-      section {margin: 20px auto;}
+}
+
+#acts-as-button:has(#trigger:checked) ~ #popover {
+  display: block;
+}
+
     </style>
   </head>
   <body>
@@ -51,7 +69,14 @@ p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
     <header>
       <h1>Amy <br/>Winter</h1>
       <div>
-        <a href="#" data-toggle="popover" data-content="linkedin.com/in/amyewinter">Contact</a>
+       <label id="acts-as-button" for="trigger">
+  <input type="checkbox" name="trigger" id="trigger">
+  Open
+</label>
+<div id="popover">
+  <h1>Popover</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, labore!</p>
+</div>
         </div>
     </header>
     <h2>About Me</h2>
@@ -63,10 +88,5 @@ p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
     
           </main>    
 
-    <script>
-$(document).ready(function(){
-  $('[data-toggle="popover"]').popover();   
-});
-</script>
   </body>
 </html>

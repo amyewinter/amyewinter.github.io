@@ -27,56 +27,12 @@ h1, h2, h3, h4, h5 {text-wrap: balance;}
 p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
       p {margin-bottom: 10px;}
 
-      #acts-as-button {
-  background:steelblue;
-  color: white;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  cursor: pointer;
-  width: fit-content;
-  user-select: none;
-}
-
-#acts-as-button:hover,
-#acts-as-button:has(#trigger:checked) {
-  background: lightsteelblue;
-}
-
-#trigger {
-  display: none;
-}
-
-#popover {
-  display: none;
-  background-color: lightgrey;
-  width: 300px;
-  padding: 1rem;
-
-  p {
-    margin: 0;
-  }
-
-}
-
-#acts-as-button:has(#trigger:checked) ~ #popover {
-  display: block;
-}
-
     </style>
   </head>
   <body>
     <main>
     <header>
       <h1>Amy <br/>Winter</h1>
-      <div>
-       <label id="acts-as-button" for="trigger">
-  <input type="checkbox" name="trigger" id="trigger">
- Contact
-</label>
-<div id="popover">
-  <p><a href="https://linkedin.com/in/amyewinter" target="_blank">View my LinkedIn Profile</a></p>
-</div>
-        </div>
     </header>
     <h2>About Me</h2>
     <p>Web design/development and content management expert with 15+ years’ experience creating scalable web-based information management/CMS solutions.</p>

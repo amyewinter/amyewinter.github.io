@@ -39,6 +39,13 @@ h1, h2, h3, h4, h5 {text-wrap: balance;}
 p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
       p {margin-bottom: 10px;}
 
+      .flex-group {
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        gap: 40px;
+      }
+
     </style>
   </head>
   <body>
@@ -48,21 +55,22 @@ p, li, figcaption {text-wrap: pretty; max-width: 70ch;}
       <p><a href="https://linkedin.com/in/amyewinter">LinkedIn Profile</a></p>
     </header>
       <section>
+      
     <h2>About Me</h2>
     <p>Web design, development and content management expert with 15+ years’ experience making information available, discoverable, and actionable.</p></section>
-
+      <section class="flex-group">
+  <div>
       <h2>Languages, Software and Technologies</h2>
       <ul style="list-style-type:square;">
         <li>HTML/CSS</li><li>JavaScript</li><li>Python</li><li>PHP</li><li>XML</li><li>SQL/MySQL/SQLite</li><li>SharePoint</li><li>Drupal</li><li>WordPress</li><li>Cascade</li><li>Git</li><li>Linux</li><li>Google Analytics</li><li>Microsoft Office Suite</li><li>Adobe Creative Suite</li>
 
-      </ul>
-
+      </ul></div>
+  <div>
       <h2>Skills</h2>
 <ul style="list-style-type:square;">
-      <li>Information Architecture</li><li>User Experience Design</li><li>Content Creation & Management</li><li>Web Analytics & Performance Optimization</li><li>Stakeholder Communication & Management</li></ul>
-      
-      <p><a href="https://github.com/amyewinter/LV-scraper/blob/master/migration-article-github.pdf">Technical Writing Sample</a></p>
-    
+      <li>Information Architecture</li><li>User Experience Design</li><li>Content Creation & Management</li><li>Web Analytics & Performance Optimization</li><li>Stakeholder Communication & Management</li></ul> </div> </section>
+<section>      
+      <p><a href="https://github.com/amyewinter/LV-scraper/blob/master/migration-article-github.pdf">Technical Writing Sample</a></p></section>
           </main>    
 
   </body>

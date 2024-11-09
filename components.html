@@ -1,0 +1,360 @@
+<html>
+  <head>
+    <style>
+      /* General Styles */
+      /* 1. Use a more-intuitive box-sizing model. */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /* 2. Remove default margin */
+      * {
+        margin: 0;
+      }
+      /* Typographic tweaks! 3. Add accessible line-height 4. Improve text rendering */
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* 5. Improve media defaults */
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      /* 6. Remove built-in form typography styles */
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      /* 7. Avoid text overflows */
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+      /* 8. Create a root stacking context */
+      #root,
+      #__next {
+        isolation: isolate;
+      }
+
+      html {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      body {
+        font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        background: white;
+        color: #33658a;
+      }
+
+      a {
+        color: #33658a;
+        text-decoration: underline;
+      }
+
+      p {
+        max-width: 50ch;
+      }
+
+      .container {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        column-gap: 120px;
+        flex-wrap: wrap;
+        min-height: 50px;
+      }
+
+      .logo {
+        max-width: 150px;
+        display: block;
+      }
+
+      .btn {
+        background-color: #28231c;
+        color: #84e6f8;
+        padding: 1em 1.5em;
+        border: 2px solid #28231c;
+        border-radius: 0.5rem;
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      i {
+        padding-right: 0.3em;
+      }
+
+      /* Modal Styles */
+
+      .modal-window {
+        position: fixed;
+        color: #28231c;
+        top: 15%;
+        right: 0;
+        bottom: 2%;
+        left: 35%;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        &:target {
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+          /*overflow: auto;*/
+        }
+        & > div {
+          max-width: fit-content;
+          position: absolute;
+          top: 35%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 2em;
+          background: white;
+          border: 2px solid #28231c;
+          border-radius: 0.5rem;
+        }
+
+        header {
+          font-weight: bold;
+        }
+        h2,
+        h3 {
+          margin: 0 0 15px;
+          color: #33658a;
+        }
+      }
+
+      main {
+        margin: 10px 5%;
+      }
+
+      h2 {
+        font-size: 150%;
+      }
+
+      h3 {
+        font-size: 90%;
+      }
+
+      .modal-close {
+        color: #28231c;
+        line-height: 30px;
+        font-size: 80%;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: underline;
+        &:hover {
+          color: #ba0c2f;
+        }
+
+        .modal-window {
+          & > div {
+            border-radius: 1rem;
+          }
+        }
+
+        .modal-window div:not(:last-of-type) {
+          margin-bottom: 15px;
+        }
+      }
+
+      .modal-content {
+        display: flex;
+        gap: 50px;
+        overflow: auto;
+        align-items: flex-start;
+      }
+
+      .modal-content p {
+        font-size: 70%;
+        color: #33658a;
+      }
+
+      footer {
+        color: white;
+        background-color:#33658a;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Web Component Redesign</h1>
+      <div class="container">
+        <!-- START BUTTONS -->
+        <div class="interior">
+          <!-- button -->
+          <a class="btn" href="#open-modal1">Student Snapshot</a>
+        </div>
+        <!-- end button  -->
+
+        <div class="interior">
+          <!-- button -->
+          <a class="btn" href="#open-modal2">Form</a>
+        </div>
+        <!-- end button -->
+
+        <div class="interior">
+          <!-- button -->
+          <a class="btn" href="#open-modal3">Testimonial</a>
+        </div>
+        <!-- end button -->
+
+        <div class="interior">
+          <!-- button -->
+          <a class="btn" href="#open-modal4">Accordion</a>
+        </div>
+        <div class="interior">
+          <!-- button -->
+          <a class="btn" href="#open-modal5">Sidebar</a>
+        </div>
+        <!-- end button  -->
+      </div>
+      <!-- END BUTTONS -->
+
+      <!-- START MODAL WINDOWS -->
+
+      <!--  modal 1 -->
+      <div id="open-modal1" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X Close</a>
+          <!-- modal title -->
+          <h2>Student Snapshot</h2>
+          <br />
+          <div class="modal-content">
+            <div>
+              <h3>Original</h3>
+              <img src="./images/snapshot-old.jpg" style="max-width: 250px" />
+            </div>
+            <div>
+              <h3>Redesigned</h3>
+              <img src="./images/snapshot-new.jpg" style="max-width: 400px" />
+              <p>
+                Graphics created with Canva to increase visual interest and
+                engagement. CSS grid layout stacks the graphics on small
+                screens.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal 1 -->
+
+      <!-- modal 2 -->
+      <div id="open-modal2" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X Close</a>
+          <!-- modal title -->
+          <h2>Request Information Form</h2>
+          <br />
+          <div class="modal-content">
+            <div>
+              <h3>Original</h3>
+              <img src="./images/rfi-form-old.jpg" style="max-width: 120px" />
+            </div>
+            <div>
+              <h3>Redesigned</h3>
+              <img src="./images/rfi-form-new.jpg" style="max-width: 250px" />
+              <p>
+                The restyled form is responsive, with an updated look and branded
+                font. The wording for the Residency field header and dropdown
+                was changed to improve user experience. Privacy disclaimer was
+                added.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal 2 -->
+
+      <!-- modal 3 -->
+      <div id="open-modal3" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X Close</a>
+          <!-- modal title -->
+          <h2>Testimonial</h2>
+          <br />
+          <div class="modal-content">
+            <div>
+              <h3>Original</h3>
+              <img
+                src="./images/mcreynolds-testimonial-old.jpg"
+                style="max-width: 200px"
+              />
+            </div>
+            <div>
+              <h3>Redesigned</h3>
+              <img
+                src="./images/mcreynolds-testimonial-new.jpg"
+                style="max-width: 250px"
+              />
+              <p>
+                The redesigned testimonial is more visually engaging. It
+                emphasizes the degree, it is responsive and it includes branded
+                elements like the red border and the stucco background texture.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal 3 -->
+
+      <!-- modal 4 -->
+      <div id="open-modal4" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X Close</a>
+          <!-- modal title -->
+          <h2>Accordion</h2>
+
+          <br />
+          <div>Modal 4</div>
+          <br />
+        </div>
+      </div>
+      <!-- end modal 4 -->
+
+      <!-- modal 5 -->
+      <div id="open-modal5" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">X Close</a>
+          <!-- modal title -->
+          <h2>Sidebar</h2>
+
+          <br />
+          <div>Modal 5</div>
+          <br />
+        </div>
+      </div>
+      <!-- end modal 5 -->
+      <footer>&copy; 2024 Amy E. Winter</footer>
+    </main>
+
+  </body>
+</html>

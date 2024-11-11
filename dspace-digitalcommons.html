@@ -150,14 +150,14 @@
             wizard, choose as the File origin: "65001: Unicode UTF-8," to avoid problems with character set mismatches.
         </p>
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-2.jpg" alt="">
             <figcaption>Select unicode character set</figcaption>
         </figure>
 
         <p>If you open the export with Windows or other encoding in Excel, you may see errors with special characters:
         </p>
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-3.jpg" alt="">
             <figcaption>Character set interpretation and field duplication problems in DSpace metadata export
             </figcaption>
         </figure>
@@ -177,20 +177,20 @@
             feature, also available in the "Context" section of the sidebar.</p>
 
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-4.jpg" alt="">
             <figcaption>Export collection menu option</figcaption>
         </figure>
         <p>This option generates a zip file containing one folder for each item in the collection. If you export a
             community, a folder for that community is created, containing a folder for each collection within the
             community, which contains a folder for each item.</p>
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-5.jpg" alt="">
             <figcaption>DSpace export package folder structure</figcaption>
         </figure>
         <p>Each item folder contains a number of files pertaining to the item.</p>
 
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-6.jpg" alt="">
             <figcaption>DSpace export package item folder contents</figcaption>
         </figure>
         <p>In this example, the "contents" file contains a reference to the license. The "handle" file contains the
@@ -204,7 +204,7 @@
         <p>Python also has multiple libraries for parsing XML, but unfortunately the output from DSpace, in the
             dublin_core.xml file, was not well-formed XML.</p>
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-7.jpg" alt="">
             <figcaption>Contents of dublin_core.xml</figcaption>
         </figure>
         <p>All of the tags are <dcvalue> with elements and qualifiers referring to the DSpace data type and other
@@ -217,7 +217,7 @@
                 that each piece of data had an identifying label right above it. The CSV output, imported into Excel,
                 looks like this:</p>
         <figure>
-            <img src="" alt="">
+            <img src="/images/ss-8.jpg" alt="">
             <figcaption>CSV metadata, written by Python script, imported into Excel</figcaption>
         </figure>
         <p>This method leaves a lot of cleanup to do in Excel:</p>

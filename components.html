@@ -64,6 +64,28 @@
         color: #33658a;
       }
 
+      main {
+        display: grid;
+        grid-template-areas: "header" "title" "buttons" "content" "footer"; 
+        max-width: 850px;
+        margin: 20px 7%;
+        font-size: 0.9rem;
+      }
+
+      header {
+        grid-area: header;
+        color: #33658a;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #33658a;
+        margin-bottom: 15px;
+      }
+
+      #title {
+        grid-area: title;
+      }
+
       a {
         color: #33658a;
         text-decoration: underline;
@@ -74,27 +96,26 @@
       }
 
       .container {
+        grid-area: buttons;
         margin-top: 40px;
         display: flex;
-        flex-direction: column;
-        gap: 35px;
-        column-gap: 120px;
+        flex-direction: row;
+        gap: 20px;
+        column-gap: 20px;
         flex-wrap: wrap;
         min-height: 50px;
       }
 
-      .logo {
-        max-width: 150px;
-        display: block;
-      }
-
       .btn {
+        display: inline-block;
         background-color: #28231c;
         color: #84e6f8;
-        padding: 1em 1.5em;
+        padding: .3em 25px;
         border: 2px solid #28231c;
         border-radius: 0.5rem;
+        text-align: center;
         text-decoration: none;
+        width: 150px;
 
         &:hover {
           color: white;
@@ -108,12 +129,12 @@
       /* Modal Styles */
 
       .modal-window {
-        position: fixed;
-        color: #28231c;
-        top: 15%;
+         position: relative;
+        /*top: 30%;
         right: 0;
         bottom: 2%;
-        left: 35%;
+        left: 1%; */
+        color: #28231c;
         z-index: 999;
         visibility: hidden;
         opacity: 0;
@@ -126,10 +147,12 @@
           /*overflow: auto;*/
         }
         & > div {
+          grid-area: content;
           max-width: fit-content;
+          /*
           position: absolute;
           top: 35%;
-          left: 50%;
+          left: 50%; */
           transform: translate(-50%, -50%);
           padding: 2em;
           background: white;
@@ -137,9 +160,6 @@
           border-radius: 0.5rem;
         }
 
-        header {
-          font-weight: bold;
-        }
         h2,
         h3 {
           margin: 0 0 15px;
@@ -147,10 +167,7 @@
         }
       }
 
-      main {
-        margin: 10px 5%;
-      }
-
+      
       h2 {
         font-size: 150%;
       }
@@ -197,29 +214,42 @@
       }
 
       footer {
+        grid-area: footer;
         color: white;
         background-color:#33658a;
         padding: 10px;
+        /*
         position: absolute;
-        bottom: 0;
-        margin-top: 100px;
+        bottom: 0; 8?
+        margin-top: 100px; */
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>Web Component Redesign</h1>
+      <header>
+      <h1>Amy Winter</h1>
+      <p style="font-size: 60%">
+        <a href="https://linkedin.com/in/amyewinter" target="_blank"
+          >LinkedIn Profile</a
+        > <p><a href="https://amyewinter.github.io/"><- Back to Home</a></p>
+        
+      </p>
+    </header>
+      <div id="title">
+      <h1>Web Component Redesign</h1></div>
+
       <div class="container">
         <!-- START BUTTONS -->
         <div class="interior">
           <!-- button -->
-          <a class="btn" href="#open-modal1">Student Snapshot</a>
+          <a class="btn" href="#open-modal1">Student Stats</a>
         </div>
         <!-- end button  -->
 
         <div class="interior">
           <!-- button -->
-          <a class="btn" href="#open-modal2">Form</a>
+          <a class="btn" href="#open-modal2">RFI Form</a>
         </div>
         <!-- end button -->
 

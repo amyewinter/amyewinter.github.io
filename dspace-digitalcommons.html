@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* 1. Use a more-intuitive box-sizing model. */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* 2. Remove default margin */
+        * {
+            margin: 0;
+        }
+
+        /* Typographic tweaks! 3. Add accessible line-height 4. Improve text rendering */
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 5. Improve media defaults */
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* 6. Remove built-in form typography styles */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* 7. Avoid text overflows */
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+
+        /* 8. Create a root stacking context */
+        #root,
+        #__next {
+            isolation: isolate;
+        }
+
+        body {
+            font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 20px 7%;
+            font-size: 0.9rem;
+        }
+
+        header {
+            color: #33658a;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: solid 1px #33658a;
+            margin-bottom: 15px;
+        }
+
+        p,
+        li,
+        figcaption {
+            text-wrap: pretty;
+            max-width: 80ch;
+        }
+
+        p,
+        ul {
+            padding-bottom: 20px;
+        }
+
+        figcaption {
+            font-style: italic;
+            padding: 10px inherit 20px inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Amy Winter</h1>
+            <p style="font-size: 60%">
+                <a href="https://linkedin.com/in/amyewinter" target="_blank">LinkedIn Profile</a>
+            </p>
+        </header>
+        <h2>Exporting Metadata and Content from DSpace</h2>
+        <h3>A report from the 2016-2017 LoboVault migration at the University of New Mexico</h3>
+
+        <p>By Amy E. Winter, MPA</p>
+        <p>Program Specialist, Digital Initiatives and Scholarly Communication</p>
+        <p>University Libraries and Learning Sciences, University of New Mexico</p>
+        <p>
+            <hr />&nbsp;
+        </p>
+
+        <h4>Abstract</h4>
+        <p>The University of New Mexico initiated a digital institutional repository in approximately 2009 using the
+            DSpace open-source repository software. By 2015, faced with deteriorating performance from the DSpace
+            installation, library administration decided, rather than performing an extensive upgrade to DSpace, to
+            purchase a subscription to bepress's hosted product, Digital Commons, and migrate all existing DSpace
+            content&mdash;more than 23,000 documents&mdash;to the new platform. The migration was completed between June
+            of 2016 and June of 2017. Because I could not find much explicit documentation on obtaining and processing
+            data exports from DSpace (version 5.1), this article explains the available export options, my
+            decision-making process, and the broad workflow steps I used to complete the migration. Since bepress
+            provides extensive documentation of their batch uploading process, the importing of content into Digital
+            Commons is not described here.</p>
+
+        <h4>Project Description</h4>
+        <p>At the beginning of the project, I evaluated the content exported via two different options in DSpace. In
+            most cases collections were individually exported, except where items were to be organized differently in
+            the new repository. I wrote a Python processor that walks through the exported document folder structure and
+            converts the XML metadata and the bitstream (file) URL into CSV. I then processed and cleaned the CSV files
+            in Excel, in preparation for batch import into Digital Commons. </p>
+
+        <h4>Obtaining Metadata from DSpace</h4>
+        <p>UNM's installation of DSpace provides two simple, front-end interface based methods for exporting
+            data.<a href="#f1"><sup>1</sup></a> (Your results may vary depending on the specific options selected for your installation.)
+        </p>
+        <h5>Option 1. Metadata Export</h5>
+        <p>The first method is to export the metadata using the "Export Metadata" option in the "Context" section of the
+            sidebar of the community or collection you would like to export. This option is available to logged-in
+            administrators with appropriate permissions.</p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>Export metadata menu option</figcaption>
+        </figure>
+        <p>This provides a metadata output in csv format and can be helpful as a snapshot of the contents of the
+            collection. Be sure to import this file into Excel using the wizard in the Data tab, and in Step 1 of the
+            wizard, choose as the File origin: "65001: Unicode UTF-8," to avoid problems with character set mismatches.
+        </p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>Select unicode character set</figcaption>
+        </figure>
+
+        <p>If you open the export with Windows or other encoding in Excel, you may see errors with special characters:
+        </p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>Character set interpretation and field duplication problems in DSpace metadata export
+            </figcaption>
+        </figure>
+
+        <p>The major drawbacks to the metadata export, at least for UNM's installation, is that it included a number of
+            fields we didn't want to migrate; it didn't contain some fields that we wanted (for example, provenance);
+            and in some cases contained multiple fields for the same data.</p>
+
+        <p>Manually combining duplicate columns (in the above example, "dc.description.sponsorship[en]” and
+            “dc.description.sponsorship[en_US]”) for large collections becomes tedious. Google's OpenRefine may better
+            automate the cleaning of this export, but because I already had extensive Excel experience<a href="#f2"><sup>2</sup></a>, I chose not to
+            spend the time learning another application. For these reasons, for the most part I did not use this option
+            to export metadata, preferring the export obtained in Option 2.</p>
+
+        <h5>Option 2. Collection/Community Export</h5>
+        <p>The second option for exporting data from DSpace is to use the "Export Collection" or "Export Community"
+            feature, also available in the "Context" section of the sidebar.</p>
+
+        <figure>
+            <img src="" alt="">
+            <figcaption>Export collection menu option</figcaption>
+        </figure>
+        <p>This option generates a zip file containing one folder for each item in the collection. If you export a
+            community, a folder for that community is created, containing a folder for each collection within the
+            community, which contains a folder for each item.</p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>DSpace export package folder structure</figcaption>
+        </figure>
+        <p>Each item folder contains a number of files pertaining to the item.</p>
+
+        <figure>
+            <img src="" alt="">
+            <figcaption>DSpace export package item folder contents</figcaption>
+        </figure>
+        <p>In this example, the "contents" file contains a reference to the license. The "handle" file contains the
+            unique identifier for the item in the repository. The Word file is the actual document<a href="#f2"><sup>3</sup></a>, and "license.txt"
+            is the text of the license the user agreed to upon uploading the item. Along with the copy of the
+            document(s), the most relevant file in this batch is "dublin_core.xml" which I will return to in a moment.
+        </p>
+        <p>The first task for any script is to parse the exported folder structure. There are many ways to do this, but
+            since I know a little Python, I chose to use the os library. In a few simple steps I could walk through the
+            folder structure and extract the content I wanted into a list.</p>
+        <p>Python also has multiple libraries for parsing XML, but unfortunately the output from DSpace, in the
+            dublin_core.xml file, was not well-formed XML.</p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>Contents of dublin_core.xml</figcaption>
+        </figure>
+        <p>All of the tags are <dcvalue> with elements and qualifiers referring to the DSpace data type and other
+                attributes; my barely intermediate Python and nonexistent XSL skills were insufficient to the task of
+                parsing this accurately. </p>
+        <p>Instead, I decided to use the Python library BeautifulSoup, designed for parsing HTML tags, and then output
+            two lines of CSV per collection item (using the csv and cStringIO libraries). </p>
+        <p>The first line of delimited content shows the element and the qualifier from the <dcvalue> tag, and the
+                second line contains the content of that field. This created a sort of header-row, item-row structure so
+                that each piece of data had an identifying label right above it. The CSV output, imported into Excel,
+                looks like this:</p>
+        <figure>
+            <img src="" alt="">
+            <figcaption>CSV metadata, written by Python script, imported into Excel</figcaption>
+        </figure>
+        <p>This method leaves a lot of cleanup to do in Excel:</p>
+        <ul>
+            <li>Cells are not always aligned and occasionally there are multiple columns for the same data type.</li>
+            <li>Once cells are aligned correctly, all but the top “header” rows must be removed (a few steps or a macro can be used in Excel to automate this).</li>
+            <li>Subject headings and URLs to the documents were handled separately.</li>
+        </ul>
+        <p>With good Excel skills, or facility with OpenRefine or another data cleaning tool, this was an acceptable solution for someone with beginning to intermediate programming skills.  Except for the largest and most complex collections, I was usually able to clean 2-3 collections per day, transfer the data and links to the Digital Commons batch upload sheets, and upload them to the new repository.</p>
+        <h4>Code</h4>
+        <p><a href="https://github.com/amyewinter/LV-scraper">The code referred to in this article (and an example XML file) is available on GitHub.</a>
+            </p>
+            <h4>Conclusion</h4>
+            <p>After evaluating the structure and content of the metadata exports available from UNM's installation of DSpace, I decided to use the Collection/Community export feature, process the exported XML metadata with Python, and then I cleaned the resulting output in Excel to ready it for batch uploading to Digital Commons.</p>
+            <h4>Acknowledgements</h4>
+            <p>Thanks are due to Jon Wheeler, Data Curation Librarian at UNM, for assistance in understanding how to access the data export options in DSpace. </p>
+            <h4>Notes</h4>
+            <p><a id="f1"><sup>1</sup></a> Jon Wheeler has written a more complex Python script whose output is almost completely ready for upload into Digital Commons.  However, it requires the Digital Commons upload spreadsheet to be available before it can process the DSpace export.  Generally, I preferred to have a better understanding of the exported metadata content by working with it directly, before building publication structures in Digital Commons.</p>
+            <p><a id="f2"><sup>2</sup></a> A good resource for quickly improving basic Excel skills, if needed, is the course “Excel 2013:  Shortcuts” from lynda.com, if you have access to it.</p>
+            <p><a id="f3"><sup>3</sup></a> The fact that the export folders contain copies of the documents is useful.  This provides a local backup of your repository contents (albeit one too cumbersome for use in any but the most extreme circumstances).  It is also possible to navigate through the folder structure to quickly access and add supplemental files to migrated repository items once they are created in Digital Commons via batch upload.</p>
+
+    </main>
+</body>
+
+</html>

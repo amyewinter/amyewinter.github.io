@@ -57,14 +57,18 @@ background-color: #002147;
 
 section {
 display: grid;
+grid-template-columns: repeat(auto-fill, minmax(2000px, 1fr));
+gap: 20px;
+justify-content: space-evenly;
 }
 
 div {
-border-radius: 50%;
+border-radius: 25%;
+  max-width: 400px;
 }
 
 div:hover {
-transform: scale(1.05);
+transform: scale(1.5);
 }
 
 .gawande {background-color:#8338EC;}

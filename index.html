@@ -58,7 +58,6 @@
        font-size: 0.9rem;
        font-family: "Roboto Flex", sans-serif;
        margin: 12vh 25vw;
-       padding: 3em;
       }
 
       header {
@@ -77,11 +76,25 @@
         background-repeat: no-repeat;
         color: white;
         font-size: 1.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        padding: 3em;
       }
 
       #intro h1 {
         margin-bottom: 20px;
+      }
+
+      #buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+      }
+
+      button {
+        border: 2px white solid;
+        padding: 10px 5px;
       }
 
       a {
@@ -129,11 +142,10 @@
         background-image: url("images/forest-sky-3000x2000.jpg");
            background-size: 1000px;
         font-family: "Roboto Flex", sans-serif;
-        padding: 10px;
         position: absolute;
         bottom: 0;
         margin-top: 150px;
-        width: 50vw;
+        padding: 3em;
       }
 
       details summary { 
@@ -152,6 +164,8 @@ details summary > * {
         <p>
           Web design and content management system expert. Passionate about making information discoverable and usable.
         </p>
+        <div id="buttons">
+        <button><a href="1">About</a></button> <button><a href="1">Projects</a></button> <button><a href="1">Contact</a></button></div>
       </section>
       <section>
         <details>

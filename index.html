@@ -160,6 +160,23 @@ details summary > * {
   display: inline;
 }
     </style>
+
+    <script>
+    <!-- This method adds an event listener for the DOMContentLoaded event, checks the URL hash, and manually opens the corresponding details element, allows opening details element via clicking on a URL on a different page. Thank you so much Hannon Hill Support! -->
+
+    document.addEventListener('DOMContentLoaded', function () {
+    var hash = window.location.hash.substring(1);
+    console.log(hash);
+    if (hash) {
+        var detailElement = document.getElementById(hash);
+        console.log(detailElement);
+        console.log(detailElement && detailElement.tagName);
+        if (detailElement && detailElement.tagName === 'DETAILS') {
+            detailElement.open = true;
+        }
+    }
+});
+  </script>
   </head>
   <body>
     <main>
@@ -217,20 +234,5 @@ details summary > * {
       <footer>&copy; 2025 Amy E. Winter&nbsp;&nbsp;|&nbsp;&nbsp;Albuquerque, NM&nbsp;&nbsp;|&nbsp;&nbsp;505.507.7528</footer>
     </main>
   </body>
-  <script>
-    <!-- This method adds an event listener for the DOMContentLoaded event, checks the URL hash, and manually opens the corresponding details element, allows opening details element via clicking on a URL on a different page. Thank you so much Hannon Hill Support! -->
-
-    document.addEventListener('DOMContentLoaded', function () {
-    var hash = window.location.hash.substring(1);
-    console.log(hash);
-    if (hash) {
-        var detailElement = document.getElementById(hash);
-        console.log(detailElement);
-        console.log(detailElement && detailElement.tagName);
-        if (detailElement && detailElement.tagName === 'DETAILS') {
-            detailElement.open = true;
-        }
-    }
-});
-  </script>
+  
 </html>

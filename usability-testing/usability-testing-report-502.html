@@ -96,7 +96,7 @@
 
         /* Styles for a simple table with  header row, padding and highlighted alternate rows */
  .simple-pretty {
-	 width: 75%;
+	 width: fit-content;
 }
  .simple-pretty th{
 	 background-color:#63666a;
@@ -128,7 +128,7 @@
 
         <h4>Executive Summary</h4>
         <p>An exploratory usability study of the Student Forms page on registrar.unm.edu was conducted in November 2025 by Amy Winter. The study was designed to determine XXX  Study participants were fellow students in ENGL 502 in the fall semester, 2025.</p>
-        <p>During the test sessions, participants were given the task XXXXX . All were asked to “think out loud” to help clarify the motivations for their actions during the test. After the test, participants responded to additional questions designed to elicit their opinions about the site. Overall, the participants XX  </p>
+        <p>During the test sessions, participants were given the same task and were asked to “think out loud” to help clarify the motivations for their actions during the test. After the test, participants responded to additional questions designed to elicit their opinions about the site. Overall, the participants XX  </p>
         <p>An overview of the results from the study follows, with recommended changes for areas of the site where participants encountered difficulty. Additional testing is recommended to XXX</p>
         <h4>Audience Analysis</h4>
         <p>The primary audience for the Student Forms page is UNM students. </p>
@@ -139,10 +139,7 @@
         <p>In Houser's discussion of Schriver's three audience analysis methods, he notes that in the intuition-driven method "a writer's experience with audience and texts will result in an improved product because the imagined audience in the writer's head will guide decisions made about the final product." My many years of experience with web development and UNM systems and processes will help guide audience research and  recommendations about the user experience of the Student Forms page. In terms of identifying a shared "personal culture" for such diverse audiences, I could hypothesize that students and/or their helpers value education, and they want to follow rules and solve problems, since they are motivated to understand university regulations and processes and complete a required form to support the student's success (as opposed to ignoring the student's problem or giving up on trying to solve it). This may seem obvious, but the tone of the registrar's pages and forms (and UNM's websites more broadly) is often bureaucratic at best and oppositional at worst, sometimes almost working against audience members instead of with them. Language that is more welcoming, acknowledging the user's desire to comply with university regulations, might create a friendlier, more engaging experience which could even influence the user's opinion of the university as a whole.</p>
         <p>Given that a higher percentage of the audience may be teens, with little to no formal work experience, who may or may not have trusted adults who can provide assistance, a focus on the "lowest level" seems like a good choice. More experienced users can skip the instructions if they don't need them, and simplifying form language and interfaces will help seasoned users as well as novices complete their task successfully without difficulty or additional guidance.</p>
 
-        <h4>Method</h4>
-<p>Remote moderated testing will be performed with three testers, asking them to think aloud as they proceed through the test session. The test will incorporate some aspects of formative testing in that it will have a small sample size. The moderator will identify and note problems encountered by the test participants. Because the product is live and in use, however, the test will also have summative aspects, in that one goal is to determine whether the design and information architecture of the site successfully communicate information the target audience is seeking, and facilitate the completion of the task the user arrived at the site to accomplish. </p>
-
-        <h5>Purpose and goals of test</h5>
+		        <h5>Purpose and goals of test</h5>
                 <p>I will analyze the design of the forms landing page and the user journey to completing the Demographic Information Change form, and make recommendations for improvements to the design, user experience, language and accessibility of the page and all its linked forms, using the Demographic Information Change form as an example. An an attempt will be made to identify potential internal obstacles to achieving those recommendations.</p>
        <ul>
            <li>
@@ -152,11 +149,30 @@
            <li>Identify recommendations for improving the user experience and usability of the site</li>
        </ul>
 
-        <h5>Location and equipment</h5>
-        <p>Participants used the device and web browser of their choice to conduct the test. One test was conducted in person in my home office in Albuquerque. Two tests were conducted online via Zoom. All tests were recorded using audio and/or video and were transcribed using the Office 365 MS Word Transcribe feature.</p>
+        <h4>Method</h4>
+<p>Remote moderated testing will be performed with three testers, asking them to think aloud as they proceed through the test session. The test will incorporate some aspects of formative testing in that it will have a small sample size. The moderator will identify and note problems encountered by the test participants. Because the product is live and in use, however, the test will also have summative aspects, in that one goal is to determine whether the design and information architecture of the site successfully communicate information the target audience is seeking, and facilitate the completion of the task the user arrived at the site to accomplish. </p>
 
-        <h5>Participant recruitment</h5>
-        <p>Testers are classmates assigned to the project; therefore, formal recruitment is not needed. There is no option to select testers based on demographic characteristics or assure the testers are representative of the identified audience for the product. Certain demographic information will be collected and recorded, however.</p>
+		        <h5>Participant recruitment</h5>
+        <p>Testers are classmates assigned to the project; therefore, formal recruitment is not needed. There is no option to select testers based on demographic characteristics or assure the testers are representative of the identified audience for the product. Certain demographic information was collected and is shown below.</p>
+
+		        <h4>Test scenario and task</h4>
+        <p>The following scenario will be read to the participants before presenting the predefined, specific, open-ended task:</p>
+           <p>“Imagine you are a UNM student whose name has changed. You were directed to this page when you asked how to officially change the name the University has on record for you.”</p>
+           <p>Each participant will receive this task to complete.</p>
+           <p>“Please talk through the steps, as you are executing them, to complete the task of changing your name on official university records. Since the site is live, please do not actually complete the task, but indicate what steps you would take if you needed to complete it.”</p>
+
+        <h5>Test location, environment and equipment</h5>
+        <p>Participants used the device and web browser of their choice to conduct the test. One test was conducted in person in my home office in Albuquerque. Two tests were conducted online via Zoom and participants were asked to share their screens. All tests were recorded using audio and/or video and were transcribed using the Office 365 MS Word Transcribe feature. The testing script was adapted from Steve Krug’s Sample Test Script (Krug, 2010).</p>
+
+		<h5>Test length</h5>
+		<p>The test sessions lasted 20-30 minutes each.</p>
+
+		<h5>Test moderator role</h5>
+		<p>To help counteract the potential moderator bias identified by Marsh (2022) and Spool et al (2008), the following will be attempted: </p>
+		<ul>
+			
+		</ul>
+
 
         <h5>Participant characteristics</h5>
          <p>In total, 3 individuals participated in the study.</p>
@@ -174,11 +190,6 @@
         </table>
   
 
-        <h4>Test scenario and task</h4>
-        <p>The following scenario will be read to the participants before presenting the predefined, specific, open-ended task:</p>
-           <p>“Imagine you are a UNM student whose name has changed. You were directed to this page when you asked how to officially change the name the University has on record for you.”</p>
-           <p>Each participant will receive this task to complete.</p>
-           <p>“Please talk through the steps, as you are executing them, to complete the task of changing your name on official university records. Since the site is live, please do not actually complete the task, but indicate what steps you would take if you needed to complete it.”</p>
 
             <h4>Quantitative Usability Metrics</h4>
 
@@ -190,9 +201,10 @@
         <p>Artificial intelligence resources were not used in the performance of this test, analysis of data, or preparation of the test plan or report, except for AI Overviews presented at the top of Google search engine result pages. </p>
 <h4>References</h4>
         <ul>
-            Krug, S. (2010). Rocket Surgery Made Easy: The Do-It-Yourself-Guide to Finding and Fixing Usability Problems. New Riders.
-            <li>Spool, J., Chisnell, D., Rubin, J. (2008). Handbook of Usability Testing. Wiley.</li>
-            <li>Stanley, C. (2025) Designing a Municipal Website That Serves All Generations. GovWeb.com. <a href="https://www.govweb.com/2025/08/designing-a-municipal-website-that-serves-all-generations/">https://www.govweb.com/2025/08/designing-a-municipal-website-that-serves-all-generations/</a></li>
+            <li>Krug, S. (2010). <em>Rocket Surgery Made Easy: The Do-It-Yourself-Guide to Finding and Fixing Usability Problems</em>. New Riders.</li>
+			<li>Marsh, S. (2022). <em>User Research: Improve Product and Service Design and Enhance Your UX Research</em>em>. Kogan Page.</li>
+            <li>Spool, J., Chisnell, D., Rubin, J. (2008). <em>Handbook of Usability Testing</em>. Wiley.</li>
+            <li>Stanley, C. (2025) Designing a Municipal Website That Serves All Generations. <em>GovWeb.com</em>. <a href="https://www.govweb.com/2025/08/designing-a-municipal-website-that-serves-all-generations/">https://www.govweb.com/2025/08/designing-a-municipal-website-that-serves-all-generations/</a></li>
         </ul>
 <h4>Appendices</h4>
 <footer>&copy; 2025 Amy E. Winter&nbsp;&nbsp;|&nbsp;&nbsp;Albuquerque, NM&nbsp;&nbsp;|&nbsp;&nbsp;505.507.7528</footer>

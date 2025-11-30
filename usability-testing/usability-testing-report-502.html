@@ -125,6 +125,10 @@
 	}
 		simple-pretty tr:nth-child(even) {
 		 background-color: #f6f6f7; }
+
+		footer {
+			margin-top: 30px;
+		}
     </style>
 </head>
 
@@ -273,7 +277,7 @@
 		<p>The task was rated successfully completed if the participant:</p>
 		<ul>
 			<li>Located and viewed the Demographic Change Form online version</li>
-			<li>Noticed that they need to also download and then upload the PDF version</li>
+			<li>Noticed that they need to also download and then upload the PDF version after combining it with required documentation and obtaining necessary signatures</li>
 			<li>Could point out where they would upload the form if they needed to complete it later</li>
 		</ul>
 		<p>at any point during the test, with or without moderator assistance or a reminder of the task instructions.</p>
@@ -327,7 +331,7 @@
 				<li>“If I were who I am, doing this, I’m not sure that I could have completed that process.”
 				</li>
 			</ul></li>
-			<li>Participants question the institution's reliability and intentions.
+			<li>The user experience makes participants question the institution's reliability and intentions.
 			<ul>
 				<li>“Do I want to take the documents, the legal documents with me, or do I want to make online copies and put them in one file and trust the system to be safe?”</li>
 				<li>“I know [for] some people a name change can be a really big deal -- so to put all these steps in and try to pay attention and do the right thing and then have it not amount to anything. That's definitely disheartening. And it could feel like the university maybe doesn't care about knowing who I am and wanting to make sure that who I am is properly represented in my documentation.”</li>
@@ -338,12 +342,34 @@
 		<ul>
 			<li>All participants successfully identified "UNM students" as the primary audience for the Student Forms page.</li>
 			<li>One participant could not identify the form that would allow her to change her name. One  participant selected the correct form after several minutes of reading through and considering the list of forms. One participant selected the correct form by clicking through to each form and evaluating it.</li>
+			<li>The language and tone on the pages and forms of the Registrar's Office is bureaucratic at best and oppositional at worst, contributing to increased anxiety in users and almost working against users instead of collaborating with them to complete required tasks. Language that is more welcoming, that acknowledges the user's desire to comply with university regulations, might create a friendlier, more engaging experience which could positively influence the user's opinion of the university as a whole.</li>
+			<li>The students using these forms, and/or their helpers, value education. They want to follow rules and solve problems, since they are trying to complete a required form to support the student's success (as opposed to ignoring the student's problem or giving up on trying to solve it). The forms process should support these users who are already attempting to comply with university regulations to the best of their ability.</li>
 		</ul>
-
-		<p>In attempting to identify a shared "personal culture" for such diverse audiences, I hypothesize that students using these forms, and/or their helpers, value education. They want to follow rules and solve problems, since they are trying to complete a required form to support the student's success (as opposed to ignoring the student's problem or giving up on trying to solve it). </p>
-		<p>The language and tone on the pages and forms of the Registrar's Office is bureaucratic at best and oppositional at worst, contributing to increased anxiety in users and almost working against users instead of collaborating with them to complete required tasks. Language that is more welcoming, that acknowledges the user's desire to comply with university regulations, might create a friendlier, more engaging experience which could positively influence the user's opinion of the university as a whole.</p>
-
 		<h3 id="recs">Recommendations</h3>
+		<p>Make the Student Forms page mobile responsive. These screenshots from my Samsung Galaxy show that important content is not visible and requires horizontal scrolling to view.</p>
+		<figure>
+			<img src="/images/mobile-screenshots-2.png" alt="Screenshots showing nonresponsive Student Forms page" />
+		</figure>
+		<ul>
+			<li>Describe each form's purpose in simple, friendly, action-oriented language.</li>
+			<li>Don't use a table for page layout; create an accessible, responsive layout.</li>
+			<li>Move official form name into a title tag, where it will be visible to stakeholders who need it.</li>
+			<li>List forms by frequency of use.</li>
+			<li>Ensure all links work, and that they open in a new tab.</li>
+			<li>Include link to FastInfo instructions on forms to help declutter the main page.</li>
+			<li>Eliminate PDFs if possible as they can present accessibility problems.</li>
+			<li>Allow uploading of multiple documents instead of requiring users to combine them.</li>
+			<li>Allow attaching a photo of ID; this would be helpful to mobile users.</li>
+			<li>Assess whether the instructions on separate, intermediate screens are necessary. If so:
+			<ul>
+				<li>if instructions are standard for all forms, include them on the main forms page</li>
+				<li>if instructions differ based on the form, include them on the form</li>
+			</ul>
+			</li>
+			<li>Remove instructions that can be better presented in other ways. For example, instead of instructing users to wait after submitting a form, use a progress bar or spinner to indicate the submission is proceeding.</li>
+			<li>Instructions should show up at the step of the process where they apply. Users should not have to remember them after proceeding to a different screen.</li>
+			<li>Create a brief video demonstrating the form completion process.</li>
+		</ul>
 		
 		<h4>Assessment Tools</h4>
 		Stanley (2025) provides the following general recommendations for web design for all generations of users:

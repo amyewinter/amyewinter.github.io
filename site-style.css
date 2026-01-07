@@ -164,6 +164,7 @@ details summary > * {
 			width: 100%;
 			height: 1px;
 			color: #33658a;
+			background-color: transparent;
 		}
 
 		img {

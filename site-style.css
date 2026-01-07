@@ -58,6 +58,7 @@
 
       header {
         color: #33658a;
+		  border-bottom: 1px solid #33658a;
         
       }
 
@@ -109,13 +110,12 @@
       h4,
       h5 {
         text-wrap: balance;
-        font-family: "Montserrat Alternates", sans-serif;
       }
 
-      h2 {
-      /*  margin-top: 20px;*/
-        margin-bottom: 10px;
-      }
+h1, h3 {
+	        font-family: "Montserrat Alternates", sans-serif;
+}
+
 
       p,
       li,
@@ -154,16 +154,10 @@ details summary > * {
   display: inline;
 }
 
- p,
-        li,
-        figcaption {
-            text-wrap: pretty;
-            max-width: 80ch;
-        }
-
 
         figcaption {
             font-style: italic;
+			font-size: 0.8rem;
             padding: 10px 0 20px 0;
         }
 

@@ -39,6 +39,8 @@
       h5,
       h6 {
         overflow-wrap: break-word;
+            text-wrap: balance;
+		margin: 10px 0 2px 0;
       }
       /* 8. Create a root stacking context */
       #root,
@@ -150,4 +152,53 @@
 
 details summary > * {
   display: inline;
+}
+
+ p,
+        li,
+        figcaption {
+            text-wrap: pretty;
+            max-width: 80ch;
+        }
+
+
+        figcaption {
+            font-style: italic;
+            padding: 10px 0 20px 0;
+        }
+
+		hr {
+			margin: 10px 0;
+			width: 100%;
+			height: 1px;
+			color: #33658a;
+		}
+
+		img {
+			width: 100%;
+		}
+
+        /* Styles for a simple table with  header row, padding and highlighted alternate rows */
+ .simple-pretty {
+	 width: fit-content;
+}
+ .simple-pretty th{
+	 background-color:#63666a;
+	 color: white;
+	 font-weight: bold;
+	 text-align:left;
+	 padding:10px;
+}
+ .simple-pretty tr td {
+	 padding:10px;
+	 color:#63666a 
+	}
+		simple-pretty tr:nth-child(even) {
+		 background-color: #f6f6f7; }
+
+/* Responsive Video */
+ .video-container {
+	 overflow: hidden;
+	 position: relative;
+	 width:100%;
 }

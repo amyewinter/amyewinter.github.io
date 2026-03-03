@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APA Annotated Bibliography</title>
+    <style>
+        body {
+            /* 1-inch margins on all sides (approx 96px for screen display) */
+            margin: 96px; 
+            /* Standard APA font (Times New Roman, 12pt is common) */
+            font-family: "Times New Roman", Times, serif; 
+            font-size: 12pt;
+            /* Double-spacing throughout the document */
+            line-height: 2.0; 
+        }
+
+        /* Style for the main title "Annotated Bibliography" */
+        .title {
+            text-align: center;
+            /* No extra space needed, line-height handles spacing */
+        }
+
+        /* Container for each entry (citation + annotation) */
+        .entry {
+            /* Ensures no extra space between entries beyond the double-spacing */
+            margin-bottom: 0; 
+            padding-bottom: 0;
+        }
+
+        /* Style for the citation part with a hanging indent */
+        .citation {
+            /* Resets the indent for the first line to be flush left */
+            text-indent: -0.5in; 
+            /* Moves the entire block over to accommodate the hanging indent */
+            padding-left: 0.5in; 
+            margin-bottom: 0; /* Prevents extra space */
+        }
+
+        /* Style for the annotation part with a block indent */
+        .annotation {
+            /* Indents the entire paragraph by 0.5 inches (approx 48px) */
+            text-indent: 0; /* Ensures the whole block is indented */
+            padding-left: 0.5in;
+            margin-top: 0; /* Prevents extra space */
+            /* If the annotation spans multiple paragraphs, indent the first line of subsequent paragraphs */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main title of the page -->
+    <h1 class="title">Annotated Bibliography</h1>
+
+    <!-- Example Entry 1 -->
+    <div class="entry">
+        <!-- The full APA citation, formatted in a <p> with the citation class -->
+        <p class="citation">
+            Author, A. A. (Year, Month Day). *Title of article*. [Source Title](url), *Volume*(Issue), page range.
+        </p>
+        <!-- The annotation paragraph, in a <p> with the annotation class -->
+        <p class="annotation">
+            This paragraph summarizes the source's content, purpose, and relevance to the research topic. It is indented a half-inch from the left margin, is double-spaced, and follows the citation directly without an extra blank line.
+        </p>
+    </div>
+
+    <!-- Example Entry 2 -->
+    <div class="entry">
+        <p class="citation">
+            Example, B. B. (Year). *Book title*. [Publisher Name](url).
+        </p>
+        <p class="annotation">
+            This second entry demonstrates the alphabetical ordering of sources and the consistent formatting required. Each full citation comes first, followed by its corresponding annotation paragraph(s).
+        </p>
+    </div>
+
+</body>
+</html>
